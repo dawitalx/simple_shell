@@ -14,6 +14,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #define MAX_INPUTT 1024
+#define MAX_PATH 1024
 
 int _putchar(char c);
 int _stringprint(const char *str);
