@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
- * main - simple program that show proccess id
+ * mainn - simple program that show proccess id
  * Return: 0
  */
 
-int main(void)
+int bettybeauty(void)
 {
 	char pid_str[12];
 	int i = 0;

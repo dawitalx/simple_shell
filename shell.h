@@ -15,6 +15,7 @@
 
 int _putchar(char c);
 int _stringprint(const char *str);
+int bettybeauty(void);
 
 #endif /* SHELL_H */
 
