@@ -1,23 +1,26 @@
-#include <stdio.h>
+#include "shell.h"
+/**
+ * mainn - simple program that show proccess id
+ * Return: 0
+ */
 
-/*
-** This is a simple C program
-** It demonstrates proper naming conventions
-*/
-
-int add_numbers(int num1, int num2)
+int bettybeauty(void)
 {
-	return (num1 + num2);
-}
+	char pid_str[12];
+	int i = 0;
 
-int main(void)
-{
-	int x = 5;
-	int y = 7;
-	int sum = add_numbers(x, y);
+	pid_t pid = getpid();
+	_stringprint("Process ID (PID): ");
+	while (pid > 0)
+	{
+		pid_str[i++] = (pid % 10) + '0';
+		pid /= 10;
+	}
 
-	printf("The sum of %d and %d is %d\n", x, y, sum);
-
+	while (i > 0)
+	{
+		_putchar(pid_str[--i]);
+	}
+	_putchar('\n');
 	return (0);
 }
-
