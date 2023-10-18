@@ -45,8 +45,8 @@ void execute_command(char *input)
 
 int main(void)
 {
-	char input[MAX_INPUTT];
-	int len = 0;
+	size_t len = 0;
+	char input[MAX_INPUT];
 
 	while (1)
 	{
@@ -54,7 +54,7 @@ int main(void)
 		if (fgets(input, sizeof(input), stdin) == NULL)
 		{
 			_stringprint("\n");
-			break;
+			exit_shell();
 		}
 
 		len = _strlen(input);
@@ -63,7 +63,18 @@ int main(void)
 			input[len - 1] = '\0';
 		}
 
-		execute_command(input);
+		if (_strcmp(input, "exit") == 0)
+		{
+			exit_shell();
+		}
+		else if (_strcmp(input, "env") == 0)
+		{
+			print_environment();
+		}
+		else
+		{
+			execute_command(input);
+		}
 	}
 
 	return (0);
