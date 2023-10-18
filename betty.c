@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
- * mainn - simple program that show proccess id
- * Return: 0
+ * main - simple program that show proccess id
+ * Return: 0 on success
  */
 
 int bettybeauty(void)
@@ -10,6 +10,7 @@ int bettybeauty(void)
 	int i = 0;
 
 	pid_t pid = getpid();
+
 	_stringprint("Process ID (PID): ");
 	while (pid > 0)
 	{
