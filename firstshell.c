@@ -1,8 +1,4 @@
 #include "shell.h"
-/**
- * main - simple shell
- * Return: 0
- */
 
 int command_exists(char *command)
 {
@@ -94,6 +90,11 @@ void execute_command(char *input)
 		free(args);
 	}
 }
+
+/**
+ * main - simple shell
+ * Return: 0
+ */
 
 int main(void)
 {
