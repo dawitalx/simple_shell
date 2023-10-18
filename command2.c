@@ -23,8 +23,3 @@ void _wait(int *status)
 {
 	wait(status);
 }
-
-int _WIFEXITED(int status)
-{
-	return (WIFEXITED(status));
-}

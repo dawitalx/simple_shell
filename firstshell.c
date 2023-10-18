@@ -4,15 +4,15 @@
  * Return: 0
  */
 
-int command_exists(char *command) 
+int command_exists(char *command)
 {
 	char *path = getenv("PATH");
 	char path_copy[MAX_PATH];
 	size_t i;
 
-	for (i = 0; i < MAX_PATH; i++) 
+	for (i = 0; i < MAX_PATH; i++)
 	{
-		if (path[i] == '\0') 
+		if (path[i] == '\0')
 		{
 			path_copy[i] = '\0';
 			break;
@@ -20,33 +20,33 @@ int command_exists(char *command)
 		path_copy[i] = path[i];
 	}
 
-	for (i = 0; i < MAX_PATH; i++) 
+	for (i = 0; i < MAX_PATH; i++)
 	{
 		char *token = strtok(path_copy, ":");
-		while (token != NULL) 
+		while (token != NULL)
 		{
 			char full_path[MAX_PATH];
 			size_t j;
 
-			for (j = 0; j < MAX_PATH; j++) 
+			for (j = 0; j < MAX_PATH; j++)
 			{
-				if (token[j] == '\0') 
+				if (token[j] == '\0')
 				{
 					full_path[j] = '/';
 					break;
 				}
 				full_path[j] = token[j];
 			}
-			for (j = 0; j < MAX_PATH; j++) 
+			for (j = 0; j < MAX_PATH; j++)
 			{
-				if (command[j] == '\0') 
+				if (command[j] == '\0')
 				{
 					full_path[j + 1] = '\0';
 					break;
 				}
 				full_path[j + 1] = command[j];
 			}
-			if (_access(full_path, X_OK) == 0) 
+			if (_access(full_path, X_OK) == 0)
 			{
 				return (1);
 			}
